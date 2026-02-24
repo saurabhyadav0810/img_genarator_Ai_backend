@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhyadav0810/img_genarator_Ai_backend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/saurabhyadav0810/img_genarator_Ai_backend/issues"
+  },
+  "homepage": "https://github.com/saurabhyadav0810/img_genarator_Ai_backend#readme"
+}
