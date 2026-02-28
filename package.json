@@ -5,9 +5,9 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/saurabhyadav0810/img_genarator_Ai_backend/issues"
   },
-  "homepage": "https://github.com/saurabhyadav0810/img_genarator_Ai_backend#readme"
+  "homepage": "https://github.com/saurabhyadav0810/img_genarator_Ai_backend#readme",
+  "dependencies": {
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.2",
+    "nodemon": "^3.1.14",
+    "openai": "^6.25.0"
+  }
 }
