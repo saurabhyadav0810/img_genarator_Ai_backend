@@ -4,7 +4,7 @@ export const generateAiImage = async (req, res, next) => {
     try {
         const { prompt } = req.body;
 
-        // Using Hugging Face FLUX.1-schnell via new router endpoint
+       
         const response = await axios.post(
             "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
             { inputs: prompt },

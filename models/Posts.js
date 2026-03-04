@@ -4,6 +4,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    username: {
+        type: String,
+        required: true,
+    },
     prompt: {
         type: String,
         required: true,

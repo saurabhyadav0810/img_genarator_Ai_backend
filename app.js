@@ -4,6 +4,7 @@ import connectDB from './config/db.js';
 import PostRouter from './routes/Posts.route.js';
 import { generateImageRouter } from './routes/GenerateAiImage.route.js';
 import AuthRouter from './routes/Auth.route.js';
+import ChatRouter from './routes/chat.route.js';
 const app = express();
 connectDB();
 app.use(cors());
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use("/api/auth", AuthRouter);
 app.use("/api/posts", PostRouter);
 app.use("/api/generate", generateImageRouter);
+app.use("/api/chat", ChatRouter);
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || "Something went wrong!";

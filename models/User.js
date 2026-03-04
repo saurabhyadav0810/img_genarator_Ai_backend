@@ -6,6 +6,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      match: [/^[a-zA-Z0-9_]+$/, "Username can only contain letters, numbers, and underscores"],
+    },
     email: {
       type: String,
       required: true,

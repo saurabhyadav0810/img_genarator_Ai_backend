@@ -1,4 +1,5 @@
 import post from "../models/Posts.js";
+import User from "../models/User.js";
 import dotenv from "dotenv";
 import createError from "../error.js";
 import cloudinary from "../config/cloudinary.js";
@@ -19,10 +20,16 @@ export const getAllPosts = async (req, res, next) => {
 
 export const createPost = async (req, res, next) => {
     try {
-        const { name, prompt, photo } = req.body;
+        const { prompt, photo } = req.body;
+
+    
+        const user = await User.findById(req.userId);
+        if (!user) return next(createError(404, "User not found"));
+
         const photoUrl = await cloudinary.uploader.upload(photo);
         const newPost = await post.create({
-            name,
+            name: user.name,
+            username: user.username,
             prompt,
             photo: photoUrl.secure_url,
         });

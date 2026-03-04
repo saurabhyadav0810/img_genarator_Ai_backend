@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+import { createServer } from 'http';
 import cloudinary from './config/cloudinary.js';
 
 cloudinary.config({
@@ -10,9 +11,13 @@ cloudinary.config({
 });
 
 import app from "./app.js";
+import initializeSocket from './socket/socket.js';
 
 const PORT = 3000;
 
-app.listen(PORT, () => {
+const server = createServer(app);
+initializeSocket(server);
+
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
